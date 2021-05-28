@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+<!-- HEAD -->
+{% block head %}
+<title>Your message</title>
+{% endblock %}
+
+<!-- BODY -->
+{% block body %}
+<div class="test_msgs">
+  <section>
+    <h3>Your message & details:</h3>
+    <p><b>First name: </b>{{ my_message.sender_fname }}</p>
+    <p><b>Last name: </b>{{ my_message.sender_lname }}</p>
+    <p><b>Email: </b>{{ my_message.sender_email }}</p>
+    <p class="msg"><b>Message: </b>{{ my_message.message }}</p>
+    <p><b>Sent: </b>{{ my_message.date_sent.strftime('%A, %Y-%m-%d, %H:%M %p') }}</p>
+  </section>
+
+  <hr>
+
+  <section>
+    <h3>All messages sent so far:</h3>
+    <ul class="all_messages">
+      {% for message in all_messages %}
+      <li>
+        <p><b>First name: </b>{{ message.sender_fname }}</p>
+        <p><b>Last name: </b>{{ message.sender_lname }}</p>
+        <p><b>Email: </b>{{ message.sender_email }}</p>
+        <p class="msg"><b>Message: </b>{{ message.message }}</p>
+        <p><b>Sent: </b>{{ message.date_sent.strftime('%A, %Y-%m-%d, %H:%M %p') }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
+{% endblock %}

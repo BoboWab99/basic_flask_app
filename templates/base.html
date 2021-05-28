@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/sam_logo.png') }}" type="image/x-icon">
+
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header>
+    <div class="mylogo">
+      <a href="/home">
+        <img src="{{ url_for('static', filename='images/sam_logo.png') }}" width="50" height="50" alt="sam's logo">
+      </a>
+    </div>
+  
+    <!-- added button to contact page -->
+    <a href="/contact-me" class="contact_me_btn">Contact me</a>
+      
+    <button class="nav-btn" aria-label="nav-button">
+      <span class="btn"></span>
+    </button>
+  
+    <nav class="mynav">
+      <ul class="mynav_ls">
+        <li class="mynav_item"> <a href="/home" class="mynav_link">Home</a></li>
+        <li class="mynav_item"> <a href="/home#skills" class="mynav_link">Creative Styles</a></li>
+        <li class="mynav_item"> <a href="/home#about" class="mynav_link">About Me</a></li>
+        <li class="mynav_item"> <a href="/home#projects" class="mynav_link">Art Projects</a></li>
+        <li class="mynav_item"> <a href="/contact-me" class="mynav_link">Contact me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  {% block body %}{% endblock %}
+
+  <!--page footer-->
+  <footer class="footer">
+    <!--insert your own here-->
+    {% block footer %}{% endblock %}
+
+    <a href="mailto:fort.smg@gmail.com" class="footer_link">fort.smg@gmail.com</a>
+  
+    <ul class="social_links">
+      <li class="socialitem">
+        <a class="socialitemlink" href="https://twitter.com"><i class="fab fa-twitter"></i> Twitter</a>
+      </li>
+      <li class="socialitem">
+        <a class="socialitemlink" href="https://facebook.com"><i class="fab fa-facebook-square"></i> Facebook</a>
+      </li>
+      <li class="socialitem">
+        <a class="socialitemlink:" href="https://instagram.com"><i class="fab fa-instagram-square"></i> Instagram</a>
+      </li>
+    </ul>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

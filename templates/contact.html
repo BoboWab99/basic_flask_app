@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+<!-- HEAD -->
+{% block head %}
+<title>Contact me</title>
+{% endblock %}
+
+<!-- BODY -->
+{% block body %}
+<!--Top Introduction Section-->
+<section class="topintro" id="home">
+  <h1 class="sectitle sectitle_intro">
+    Hello. I am <strong>Sam Jones</strong>A self-taught artist.
+  </h1>
+  <img src="{{ url_for('static', filename='images/artist.jpg') }}" width="220" height="220" alt="sam display image" class="first_img">
+</section>
+
+<section class="contact_me">
+  <h1>Contact me</h1>
+  <form method="POST">
+    <div class="row">
+      <p class="label">First name:</p>
+      <p><input type="text" name="first_name" id="first_name" required></p>
+    </div>
+
+    <div class="row">
+      <p class="label">Last name:</p>
+      <p><input type="text" name="last_name" id="last_name" required></p>
+    </div>
+
+    <div class="row">
+      <p class="label">Email:</p>
+      <p><input type="email" name="email" id="email" required></p>
+    </div>
+
+    <div class="row">
+      <p class="label">Message:</p>
+      <p><textarea name="message" id="message" cols="30" rows="7" required></textarea></p>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</section>
+{% endblock %}

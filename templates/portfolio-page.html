@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+<!-- HEAD -->
+{% block head %}
+<title>My Projects | The Rosy Path</title>
+{% endblock %}
+
+<!-- BODY -->
+{% block body %}
+<!--Top Introduction Section-->
+<section class="topintro" id="home">
+  <h1 class="sectitle sectitle_intro">
+    My <strong>First Project</strong>
+  </h1>
+  <p class="secsubtitle secsubtitle_intro"><strong>The Rosy Path</strong></p>
+  <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="first project" class="first_img">
+</section>
+
+<div class="portfolio_detail">
+  <p>This was my first painting. I began working on it in January 2016 and finished it in march of the same year;
+  </p>
+  <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="first project">
+
+  <p>It was inspired by one of my visits to the scenic fields of 
+    Kiambu Country, on the northern side of the Aberdare slopes. 
+  </p>
+  <p>On one sunny morning, the fields were very clear, with flowers spanning miles unending.
+    The scenery was beckoning; urging me to pick up my brush and recreate it.
+  </p>
+  <a href="/home#projects" style="margin: 0 auto;">Back to Projects</a>
+</div>
+{% endblock %}
